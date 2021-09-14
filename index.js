@@ -8,12 +8,12 @@ const NumofNotes = document.querySelectorAll(".NumofNotes")
 checkButton.addEventListener('click', function validateAmountAndCash() {
     message.style.display = "none";
     if (billAmount.value > 0) {
-        console.log(billAmount.value)
+       
         if (Number(cashgiven.value)  >= Number(billAmount.value)) {
             const amountToBeReturned = cashgiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
         } else {
-            console.log(cashgiven.value)
+           
             showMessage("The cash provided should be atleast be equal to the bill amount!!!");
         }
     } else {
@@ -25,8 +25,7 @@ checkButton.addEventListener('click', function validateAmountAndCash() {
 function calculateChange(amountToBeReturned) {
     console.log(amountToBeReturned)
     for (let i = 0; i < Notes.length; i++) {
-        const numberOfNotes = Math.trunc(amountToBeReturned / Notes[i])
-        console.log(numberOfNotes, Notes[i])
+        const numberOfNotes = Math.trunc(amountToBeReturned / Notes[i]
         amountToBeReturned = amountToBeReturned % Notes[i]
         NumofNotes[i].innerText = numberOfNotes
 
